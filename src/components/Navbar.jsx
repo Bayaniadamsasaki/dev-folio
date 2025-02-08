@@ -30,7 +30,7 @@ const Navbar = () => {
       );
     }
 
-    // Animasi untuk menu items (Desktop)
+    // Animasi menu items (Desktop)
     menuItemsRef.current.forEach((item, index) => {
       if (item) {
         const splitText = new SplitType(item, { types: "chars" });
@@ -50,7 +50,7 @@ const Navbar = () => {
     });
   }, []);
 
-  // Efek Toggle Menu GSAP
+  // Efek Toggle Menu
   useEffect(() => {
     if (menuRef.current) {
       if (isOpen) {
@@ -73,7 +73,7 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  // Tutup menu jika klik di luar
+  // Tutup menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -89,6 +89,26 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
+
+  const handleMouseEnter = () => {
+    gsap.to(buttonRef.current, {
+      scale: 1.1,
+      backgroundColor: "#B0FC04",
+      color: "#000",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(buttonRef.current, {
+      scale: 1,
+      backgroundColor: "transparent",
+      color: "#fff",
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
 
   return (
     <nav className="flex justify-between items-center w-full h-[70px] lg:h-[100px] px-5 lg:px-[100px] font-poppins">
@@ -147,6 +167,8 @@ const Navbar = () => {
       {/* Button Get Resume */}
       <button
         ref={buttonRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className="hidden lg:flex px-10 py-[10px] rounded-full border border-white text-md font-semibold text-white hover:bg-secondary hover:text-black"
         onClick={() => {
           const link = document.createElement("a");
