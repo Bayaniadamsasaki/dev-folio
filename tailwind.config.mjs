@@ -7,16 +7,20 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
+      inter: ["Inter"],
     },
     extend: {
+      lineHeight: {
+        'hero': '175px',
+      },
       colors: {
         background: "#11071F",
         primary: "#033ACA",
         secondary: "#B0FC04",
       },
       backgroundImage: {
-        'card-glass': 'linear-gradient(0deg, rgba(3, 58, 202, 0.40) 0%, rgba(3, 58, 202, 0.40) 100%), rgba(255, 255, 255, 0.35);',
+        'hero-texture': 'linear-gradient(180deg, #FFF 22.5%, rgba(255, 255, 255, 0.70) 100%);',
       }
     },
   },
