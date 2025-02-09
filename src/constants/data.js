@@ -1,5 +1,3 @@
-import Biography from "@/components/Biography";
-
 const Data = {
   hamburger: "http://localhost:3000/menu.svg",
   menuItems: [
@@ -33,6 +31,13 @@ const Data = {
 
   Biography: [
     { profile: "http://localhost:3000/profile.png", alt: "profil-adam" },
+  ],
+
+  linkSocial: [
+    { instagram: "https://instagram.com/adamsasaki_" },
+    { github: "https://github.com/Bayaniadamsasaki" },
+    { linkedin: "https://www.linkedin.com/in/bayaniadamsasaki" },
+    { behance: "https://www.behance.net/bayanisasaki" },
   ],
 };
 
