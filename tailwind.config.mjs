@@ -13,6 +13,7 @@ export default {
     extend: {
       lineHeight: {
         'hero': '175px',
+        'mobile': '50px',
       },
       colors: {
         background: "#11071F",
