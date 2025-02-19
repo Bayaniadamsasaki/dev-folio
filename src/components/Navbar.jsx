@@ -13,7 +13,6 @@ const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    // Animasi teks "Bayani Adam Sasaki"
     if (nameRef.current) {
       const text = new SplitType(nameRef.current, { types: "chars" });
 
@@ -30,7 +29,6 @@ const Navbar = () => {
       );
     }
 
-    // Animasi menu items (Desktop)
     menuItemsRef.current.forEach((item, index) => {
       if (item) {
         const splitText = new SplitType(item, { types: "chars" });
@@ -50,7 +48,6 @@ const Navbar = () => {
     });
   }, []);
 
-  // Efek Toggle Menu
   useEffect(() => {
     if (menuRef.current) {
       if (isOpen) {
@@ -73,7 +70,6 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  // Tutup menu
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
